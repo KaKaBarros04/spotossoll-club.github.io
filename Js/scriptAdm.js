@@ -256,7 +256,14 @@ function showConfirmationModal(memberName, onConfirm) {
 }
 
 document.getElementById('logout-btn').addEventListener('click', function() {
-    if(confirm('Deseja realmente sair?')) {
-        // Realizar logout aqui
+    if (confirm('Deseja realmente sair?')) {
+        // Realizar logout (limpar armazenamento local ou de sessão)
+        localStorage.removeItem('loggedIn');
+        sessionStorage.removeItem('loggedIn');
+        localStorage.removeItem('loggedInUser');
+        sessionStorage.removeItem('loggedInUser');
+        
+        // Redirecionar para a página de login ou página inicial
+        window.location.href = 'Login.html'; // ou 'index.html' caso queira redirecionar para a página inicial
     }
 });
