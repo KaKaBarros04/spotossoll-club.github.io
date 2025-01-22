@@ -118,27 +118,14 @@ nav ul li a {
         margin: 10px 0;
     }
 
-    .menu-toggle {
-        display: block;
-        background-color: #68c2a4;
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
-
+    /* Exibir o menu diretamente sem hambúrguer */
     nav ul {
-        display: none; /* Esconde o menu por padrão */
+        display: flex;
         flex-direction: column;
         gap: 10px;
         align-items: center;
         width: 100%;
         margin-top: 10px;
-    }
-
-    .menu-toggle.active + ul {
-        display: flex;
     }
 
     .member-cards, .trophy-cards {
@@ -467,59 +454,33 @@ textarea:focus {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
     transition: transform 0.3s ease;
 }
 
-.race-card-content h3{
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #007bff;
-    margin: 0;
-}
-
 .race-card-content:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
-.race-card-header {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.race-card-header h3 {
-    font-size: 1.5rem;
-    color: #007bff;
+.race-card-content h3 {
     margin: 0;
+    color: #333;
 }
 
-.race-date {
-    font-weight: bold;
-    color: #6c757d;
-    font-size: 1rem;
-    margin-top: 5px;
+.race-card-content p {
+    color: #666;
 }
 
-.race-card-footer {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.race-card-footer .btn {
-    background-color: #007bff;
+.race-card-content button {
+    background-color: #28a745;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
+    font-size: 14px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.race-card-footer .btn:hover {
-    background-color: #0056b3;
+.race-card-content button:hover {
+    background-color: #218838;
 }
