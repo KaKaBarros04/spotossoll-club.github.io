@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Verifica se o usuário não está logado
     if (!localStorage.getItem('loggedIn') && !sessionStorage.getItem('loggedIn')) {
         // Se o usuário não estiver logado, redireciona para a página de login
-        window.location.href = 'login.html';  // Redireciona para a página de login
+        window.location.href = 'Login.html';  // Redireciona para a página de login
     } else {
         // Exibe o nome do usuário logado no painel de administração
         document.getElementById('username-display').textContent = loggedInUser;

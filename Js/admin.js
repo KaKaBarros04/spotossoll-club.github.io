@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loggedInUser = localStorage.getItem('loggedInUser') || sessionStorage.getItem('loggedInUser');
     if (!loggedInUser) {
         // Se o usuário não estiver logado, redireciona para a página de login
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     }
 
     // Exibir o nome do usuário logado
@@ -60,6 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.removeItem('loggedInUser');
         
         // Redirecionar para a página de login
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     });
 });

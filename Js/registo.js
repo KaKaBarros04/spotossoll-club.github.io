@@ -44,6 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('users', JSON.stringify(users));
 
         // Redireciona o usuário para a página de login
-        window.location.href = 'login.html';  // Ou a página que você desejar
+        window.location.href = 'Login.html';  // Ou a página que você desejar
     });
 });

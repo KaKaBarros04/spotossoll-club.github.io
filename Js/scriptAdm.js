@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Verificar se o usuário está logado, seja pelo sessionStorage ou localStorage
     if (!localStorage.getItem('loggedIn') && !sessionStorage.getItem('loggedIn')) {
-        window.location.href = 'login.html';  // Redireciona para o login
+        window.location.href = 'Login.html';  // Redireciona para o login
     }
 
     // Carregar membros, troféus e corridas ao abrir a página
