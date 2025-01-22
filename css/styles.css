@@ -1,0 +1,573 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #dff5e6, #a3e1d4);
+    color: #333;
+}
+
+/* Mobile first */
+header {
+    background-color: #68c2a4;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Menu dropdown */
+.dropdown {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropbtn {
+    background-color: #68c2a4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropbtn:hover {
+    background-color: #56a98b;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsividade */
+
+/* Até 600px */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .member-cards, .trophy-cards {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .race-cards {
+        flex-direction: column; /* Cards empilhados */
+    }
+
+    .race-card-content {
+        width: 100%; /* Preencher a largura disponível */
+        margin: 10px 0;
+    }
+}
+
+/* Até 768px (Tablets) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Diminuir o tamanho da fonte */
+    }
+
+    .member-cards, .trophy-cards {
+        grid-template-columns: 1fr 1fr; /* Duas colunas para telas médias */
+    }
+
+    .race-card-content {
+        width: 48%; /* Cards ocupando 50% da tela */
+        margin: 10px;
+    }
+
+    .remove-btn {
+        font-size: 14px; /* Ajustar tamanho do botão */
+    }
+}
+
+/* Até 1024px (Desktop padrão) */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.2em; /* Ajustar para telas maiores */
+    }
+
+    nav ul {
+        gap: 20px; /* Aumentar o espaçamento entre os itens */
+    }
+
+    .member-cards, .trophy-cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    }
+
+    .race-card-content {
+        width: 30%; /* 3 cards por linha */
+    }
+}
+
+/* Acima de 1024px (Telas grandes) */
+@media (min-width: 1025px) {
+    .member-cards, .trophy-cards {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas para telas grandes */
+    }
+
+    .race-card-content {
+        width: 23%; /* 4 cards por linha */
+    }
+
+    header h1 {
+        font-size: 3em; /* Tamanho maior para telas grandes */
+    }
+
+    nav ul {
+        gap: 30px; /* Maior espaçamento entre os itens no menu */
+    }
+}
+
+/* Outros ajustes para melhorar a visualização em telas grandes */
+.race-card-content {
+    transition: transform 0.3s ease;
+}
+
+.race-card-content:hover {
+    transform: translateY(-5px);
+}
+
+/* Seções */
+section {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #68c2a4;
+    color: white;
+}
+
+button {
+    background-color: #68c2a4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #56a98b;
+}
+
+/* Estilizando o contêiner de membros para alinhar os cards horizontalmente */
+.member-cards {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que todos os cards fiquem em uma linha sem quebrar */
+    justify-content: flex-start; /* Alinha os cards à esquerda */
+    gap: 20px; /* Espaçamento entre os cards */
+    overflow-x: auto; /* Permite rolar horizontalmente se necessário */
+    padding: 20px; /* Adiciona um pouco de padding ao redor */
+}
+
+/* Menu de navegação responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    /* Estilo do botão hamburguer */
+    .menu-toggle {
+        display: block;
+        background-color: #68c2a4;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    /* Quando o menu estiver visível */
+    .menu-toggle.active + ul {
+        display: flex;
+    }
+
+    .member-cards, .trophy-cards {
+        flex-direction: column; /* Empilha os cards em dispositivos móveis */
+        align-items: center; /* Alinha ao centro */
+        gap: 10px;
+    }
+}
+
+/* Estilo do container de membros e troféus */
+.member-cards, .trophy-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.member-card {
+    flex: 1 1 200px; /* Flexível, mas com tamanho mínimo */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para as imagens dos membros */
+.member-card img {
+    width: 100px;  /* Ajuste a largura da imagem para 100px */
+    height: auto;  /* Mantém a proporção da imagem */
+    object-fit: cover;  /* Garante que a imagem seja recortada corretamente, se necessário */
+    border-radius: 10%;
+}
+
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes nas larguras dos cards */
+.race-card-content {
+    flex: 1 1 30%; /* Ajusta a largura dos cards conforme a tela */
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.race-card-content:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajuste para melhorar a responsividade dos inputs e botões */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* Container de login */
+#login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #dff5e6, #a3e1d4);
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #68c2a4;
+    color: white;
+}
+
+label {
+    display: inline-flex; /* Garante que a checkbox e o texto fiquem na mesma linha */
+    align-items: center;  /* Alinha verticalmente a checkbox e o texto */
+}
+
+input[type="checkbox"] {
+    margin: 0; /* Remove qualquer margem extra da checkbox */
+    padding: 0; /* Remove qualquer padding extra da checkbox */
+}
+
+/* Estilizando o botão de Remover */
+.remove-btn {
+    background-color: #ff4d4d; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito de hover para o botão de Remover */
+.remove-btn:hover {
+    background-color: #ff1a1a; /* Cor de fundo mais escura */
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* Efeito de focus para o botão */
+.remove-btn:focus {
+    outline: none; /* Remove o contorno ao clicar */
+}
+
+/* Estilo básico para os inputs */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Cor de borda suave */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-bottom: 15px; /* Espaço abaixo do input */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho do elemento */
+}
+
+/* Efeito ao passar o mouse por cima dos inputs */
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="file"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-color: #ff4d4d; /* Cor da borda quando o mouse passa por cima */
+}
+
+/* Foco nos campos de input */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ff1a1a; /* Cor da borda quando o campo é selecionado */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(255, 26, 26, 0.5); /* Adiciona uma sombra ao redor */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #ff4d4d; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+    background-color: #ff1a1a; /* Cor de fundo mais escura ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Estilo para a área de texto */
+textarea {
+    resize: vertical; /* Permite redimensionar a altura do textarea */
+    min-height: 100px; /* Altura mínima do textarea */
+    max-height: 300px; /* Altura máxima do textarea */
+}
+
+.trophy-card {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.trophy-image-container {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.trophy-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+.trophy-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.trophy-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+}
+.race-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.race-card-content {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.race-card-content h3{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 0;
+}
+
+.race-card-content:hover {
+    transform: translateY(-5px);
+}
+
+.race-card-header {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.race-card-header h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 0;
+}
+
+.race-date {
+    font-weight: bold;
+    color: #6c757d;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.race-card-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.race-card-footer .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.race-card-footer .btn:hover {
+    background-color: #0056b3;
+}

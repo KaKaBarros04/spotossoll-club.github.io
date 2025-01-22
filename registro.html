@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Spotosol Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="login.html">Já tem uma conta? Fazer login</a></li>
+                <li><a href="index.html">Página Inicial</a></li> <!-- Adicionado link para a página inicial -->
+            </ul>
+        </nav>
+        
+        <h1>Spotosol Club - Registro</h1>
+    </header>
+
+    <main>
+        <section id="register-section">
+            <div class="register-container">
+                <h2>Crie sua Conta</h2>
+                <form id="register-form">
+                    <input type="text" id="register-username" placeholder="Nome de Usuário" required aria-describedby="username-help">
+                    
+
+                    <small id="email-help">Use um e-mail válido.</small> <!-- Texto explicativo para acessibilidade -->
+                    <input type="email" id="register-email" placeholder="E-mail" required aria-describedby="email-help">
+                    
+
+                    <small id="password-help">A senha deve ter pelo menos 6 caracteres.</small> <!-- Texto explicativo para acessibilidade -->
+                    <input type="password" id="register-password" placeholder="Senha" required aria-describedby="password-help">
+                    
+                    
+                    <small id="confirm-password-help">Confirme a senha digitada acima.</small> <!-- Texto explicativo para acessibilidade -->
+                    <input type="password" id="confirm-password" placeholder="Confirmar Senha" required aria-describedby="confirm-password-help">
+                    
+
+                    <button type="submit">Registrar</button>
+                </form>
+                <p id="register-error" style="color:red; display:none;">Erro: As senhas não coincidem ou o usuário já existe!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spotosol Club. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/registo.js"></script>
+</body>
+</html>

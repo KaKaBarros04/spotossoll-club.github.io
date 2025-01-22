@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Painel de Administração</h1>
+    </header>
+
+    <main>
+        <section>
+            <p>Bem-vindo, <span id="username-display"></span>.</p>
+
+            <h2>Gerenciar Usuários</h2>
+
+            <!-- Formulário para adicionar usuário -->
+            <form id="add-user-form">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" required><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required><br>
+
+                <button type="submit">Adicionar Usuário</button>
+            </form>
+
+            <h3>Lista de Usuários</h3>
+            <ul id="user-list">
+                <!-- A lista de usuários será preenchida dinamicamente -->
+            </ul>
+        </section>
+
+        <button id="logout-btn">Sair</button>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

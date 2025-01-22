@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagAdm</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#sobre-nos">Sobre Nós</a>
+                <a href="#membros">Membros</a>
+                <a href="#trofeus">Salas de Troféus</a>
+                <a href="#corridas">Corridas</a>
+            </div>
+        </div>
+        <h1>Administração Spotossoll Cluuuub</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre-nos">Sobre Nós</a></li>
+                <li><a href="#membros">Membros</a></li>
+                <li><a href="#trofeus">Salas de Troféus</a></li>
+                <li><a href="#corridas">Corridas</a></li>
+                <li><button id="logout-btn">Sair</button></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre-nos">
+            <h2>Sobre Nós</h2>
+            <p>
+                O <strong>Spotosol Club</strong> nasceu da paixão pela corrida e do desejo de unir pessoas em busca de bem-estar físico, mental e social. 
+                Somos uma comunidade de maratonistas e entusiastas que acreditam no poder transformador do esporte. Mais do que um clube, 
+                somos uma família que compartilha conquistas, desafios e sonhos.
+            </p>
+            <p>
+                Aqui, cada passo conta. Celebramos não apenas a vitória, mas também o esforço e a superação. Organizamos treinos, 
+                participamos de competições ao redor do país e promovemos eventos que reforçam o espírito de equipe. No Spotosol Club, 
+                a jornada é tão importante quanto a linha de chegada.
+            </p>
+            <p>
+                Junte-se a nós e descubra como o simples ato de correr pode transformar vidas, construir amizades e criar memórias inesquecíveis.
+            </p>
+        </section>
+
+        <section id="membros">
+            <h2>Membros</h2>
+            <form id="member-form">
+                <input type="text" id="name" placeholder="Nome" required />
+                <input type="number" id="age" placeholder="Idade" required />
+                <input type="number" id="card" placeholder="Número do Dorsal" /> <!-- Este campo armazena o cartão -->
+                <input type="file" id="file-input" required />
+                <button type="submit">Adicionar Membro</button>
+                
+            </form>
+            
+            <div id="member-list" class="member-cards"></div>
+        </section>
+
+        <section id="trofeus">
+            <h2>Salas de Troféus</h2>
+            <form id="trophy-form">
+                <input type="text" id="trophy-title" placeholder="Título do Troféu" required>
+                <textarea id="trophy-description" placeholder="Descrição do Troféu" required></textarea>
+                <input type="file" id="trophy-photo" accept="image/*" required>
+                <button type="submit">Adicionar Troféu</button>
+            </form>
+            <div id="trophy-list" class="trophy-cards"></div>
+        </section>
+        
+        <section id="corridas">
+            <h2>Adicionar Corridas</h2>
+            <form id="race-form">
+                <input type="text" id="race-title" placeholder="Título da Corrida" required>
+                <input type="date" id="race-date" required>
+                <textarea id="race-description" placeholder="Descrição da Corrida" required></textarea>
+                <button type="submit">Adicionar Corrida</button>
+            </form>
+            <div id="race-list" class="race-cards"></div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spotosol Club. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="Js/scriptAdm.js"></script>
+</body>
+</html>

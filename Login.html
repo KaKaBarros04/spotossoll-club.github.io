@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spotosol Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+            </ul>
+        </nav>
+        
+        <h1>Spotosol Club</h1>
+    </header>
+
+    <main>
+        <section id="login-section">
+            <div class="login-container">
+                <h2>Login de Administrador</h2>
+                <form id="login-form">
+                    <input type="text" id="admin-name" placeholder="Nome de Usuário" required aria-describedby="username-help">
+
+                    <input type="password" id="admin-password" placeholder="Senha" required aria-describedby="password-help">
+
+                    <label for="remember-me">
+                        <input type="checkbox" id="remember-me"> Lembrar de mim
+                    </label>
+                    
+                    <button type="submit">Entrar</button>
+                </form>
+                <p id="login-error" style="color:red; display:none;">Nome de usuário ou senha incorretos</p>
+
+                <!-- Link para a página de registro -->
+                <p>Não tem uma conta? <a href="registro.html">Registrar-se</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Spotosol Club. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
