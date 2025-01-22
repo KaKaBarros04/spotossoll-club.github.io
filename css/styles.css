@@ -117,6 +117,35 @@ nav ul li a {
         width: 100%; /* Preencher a largura disponível */
         margin: 10px 0;
     }
+
+    .menu-toggle {
+        display: block;
+        background-color: #68c2a4;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-toggle.active + ul {
+        display: flex;
+    }
+
+    .member-cards, .trophy-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 /* Até 768px (Tablets) */
@@ -219,62 +248,15 @@ button:hover {
 /* Estilizando o contêiner de membros para alinhar os cards horizontalmente */
 .member-cards {
     display: flex;
-    flex-wrap: nowrap; /* Garante que todos os cards fiquem em uma linha sem quebrar */
-    justify-content: flex-start; /* Alinha os cards à esquerda */
-    gap: 20px; /* Espaçamento entre os cards */
-    overflow-x: auto; /* Permite rolar horizontalmente se necessário */
-    padding: 20px; /* Adiciona um pouco de padding ao redor */
-}
-
-/* Menu de navegação responsivo para dispositivos móveis */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Esconde o menu por padrão */
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    nav ul li a {
-        font-size: 1.2em;
-    }
-
-    /* Estilo do botão hamburguer */
-    .menu-toggle {
-        display: block;
-        background-color: #68c2a4;
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
-
-    /* Quando o menu estiver visível */
-    .menu-toggle.active + ul {
-        display: flex;
-    }
-
-    .member-cards, .trophy-cards {
-        flex-direction: column; /* Empilha os cards em dispositivos móveis */
-        align-items: center; /* Alinha ao centro */
-        gap: 10px;
-    }
-}
-
-/* Estilo do container de membros e troféus */
-.member-cards, .trophy-cards {
-    display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 20px;
-    justify-content: center;
+    overflow-x: auto;
     padding: 20px;
 }
 
 .member-card {
-    flex: 1 1 200px; /* Flexível, mas com tamanho mínimo */
+    flex: 1 1 200px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -284,14 +266,12 @@ button:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo para as imagens dos membros */
 .member-card img {
-    width: 100px;  /* Ajuste a largura da imagem para 100px */
-    height: auto;  /* Mantém a proporção da imagem */
-    object-fit: cover;  /* Garante que a imagem seja recortada corretamente, se necessário */
+    width: 100px;
+    height: auto;
+    object-fit: cover;
     border-radius: 10%;
 }
-
 
 .member-card:hover {
     transform: translateY(-10px);
@@ -300,7 +280,7 @@ button:hover {
 
 /* Ajustes nas larguras dos cards */
 .race-card-content {
-    flex: 1 1 30%; /* Ajusta a largura dos cards conforme a tela */
+    flex: 1 1 30%;
     margin: 10px;
     transition: transform 0.3s ease;
 }
@@ -309,7 +289,7 @@ button:hover {
     transform: translateY(-5px);
 }
 
-/* Ajuste para melhorar a responsividade dos inputs e botões */
+/* Estilo básico para os inputs */
 input[type="text"],
 input[type="number"],
 input[type="file"],
@@ -360,19 +340,19 @@ footer {
 }
 
 label {
-    display: inline-flex; /* Garante que a checkbox e o texto fiquem na mesma linha */
-    align-items: center;  /* Alinha verticalmente a checkbox e o texto */
+    display: inline-flex;
+    align-items: center;
 }
 
 input[type="checkbox"] {
-    margin: 0; /* Remove qualquer margem extra da checkbox */
-    padding: 0; /* Remove qualquer padding extra da checkbox */
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilizando o botão de Remover */
 .remove-btn {
-    background-color: #ff4d4d; /* Cor de fundo vermelha */
-    color: white; /* Cor do texto */
+    background-color: #ff4d4d;
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 8px 15px;
@@ -382,78 +362,49 @@ input[type="checkbox"] {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efeito de hover para o botão de Remover */
 .remove-btn:hover {
-    background-color: #ff1a1a; /* Cor de fundo mais escura */
-    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+    background-color: #ff1a1a;
+    transform: scale(1.1);
 }
 
-/* Efeito de focus para o botão */
 .remove-btn:focus {
-    outline: none; /* Remove o contorno ao clicar */
+    outline: none;
 }
 
-/* Estilo básico para os inputs */
+/* Estilo para os inputs */
 input[type="text"],
 input[type="number"],
 input[type="file"],
 input[type="password"],
 input[type="email"],
 textarea {
-    width: 100%; /* Ocupa toda a largura disponível */
+    width: 100%;
     padding: 10px;
-    border-radius: 5px; /* Bordas arredondadas */
-    border: 1px solid #ccc; /* Cor de borda suave */
-    font-size: 16px; /* Tamanho da fonte */
-    margin-bottom: 15px; /* Espaço abaixo do input */
-    box-sizing: border-box; /* Inclui padding e borda no tamanho do elemento */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
-/* Efeito ao passar o mouse por cima dos inputs */
 input[type="text"]:hover,
 input[type="number"]:hover,
 input[type="file"]:hover,
 input[type="password"]:hover,
 input[type="email"]:hover,
 textarea:hover {
-    border-color: #ff4d4d; /* Cor da borda quando o mouse passa por cima */
+    border-color: #ff4d4d;
 }
 
-/* Foco nos campos de input */
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="file"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #ff1a1a; /* Cor da borda quando o campo é selecionado */
-    outline: none; /* Remove o contorno padrão */
-    box-shadow: 0 0 5px rgba(255, 26, 26, 0.5); /* Adiciona uma sombra ao redor */
-}
-
-/* Estilo para os botões */
-button {
-    background-color: #ff4d4d; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border: none;
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animações */
-}
-
-/* Efeito de hover nos botões */
-button:hover {
-    background-color: #ff1a1a; /* Cor de fundo mais escura ao passar o mouse */
-    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
-}
-
-/* Estilo para a área de texto */
-textarea {
-    resize: vertical; /* Permite redimensionar a altura do textarea */
-    min-height: 100px; /* Altura mínima do textarea */
-    max-height: 300px; /* Altura máxima do textarea */
+    border-color: #ff1a1a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 26, 26, 0.5);
 }
 
 .trophy-card {
@@ -502,6 +453,7 @@ textarea {
 .remove-btn:hover {
     background: #c0392b;
 }
+
 .race-cards {
     display: flex;
     flex-wrap: wrap;
